@@ -11,7 +11,6 @@ import os
 import pandas
 import pickle
 import tempfile
-import tqdm
 
 from sklearn import model_selection, svm
 from sklearn.metrics import classification_report, confusion_matrix
