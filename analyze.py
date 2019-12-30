@@ -33,7 +33,7 @@ def fill_empty_cells(csv_file, fill=str(0.0)):
     return output_csv
 
 
-class Data(object):
+class DataTraining(object):
     """ Class that parses a dataset and trains it using svm """
 
     def __init__(self, input_csv, training_percentage, empty_cell_patch, classification_name):
@@ -69,7 +69,7 @@ class Data(object):
 
 
 def analyze_data(args):
-    data = Data(args.input, args.train, args.patch, args.classname)
+    data = DataTraining(args.input, args.train, args.patch, args.classname)
     data.train()
     data.predict()
     if args.output:
