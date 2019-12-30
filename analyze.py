@@ -18,7 +18,8 @@ from sklearn import model_selection, svm
 from sklearn.metrics import classification_report, confusion_matrix
 
 
-def fill_empty_cells(csv_file, fill='0.0'):
+def fill_empty_cells(csv_file, fill=str(0.0)):
+    """ helper function that replaces empty csv cells with a specified fill value"""
     no_ext, _ = os.path.split(csv_file)
     output_csv = tempfile.NamedTemporaryFile(delete=False, suffix=os.path.basename(no_ext)).name
     with open(csv_file) as infile, open(output_csv, 'w') as outfile:
@@ -83,12 +84,8 @@ if __name__ == '__main__':
     parser.add_argument('-i', '--input', required=True, help='path to input data')
     parser.add_argument('-c', '--classname', required=True, help='column name for the output class')
     parser.add_argument('-o', '--output', help='path to save the model to')
-    parser.add_argument(
-        '-t',
-        '--train',
-        type=float,
-        help='percentage of input file as training data',
-        default=0.0)
+    parser.add_argument('-t', '--train', type=float, default=0.0,
+                        help='percentage of input file as training data')
     args = parser.parse_args()
 
     analyze_data(args)
