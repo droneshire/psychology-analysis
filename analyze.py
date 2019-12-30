@@ -38,12 +38,12 @@ def fill_empty_cells(csv_file, fill=str(0.0)):
 class Data(object):
     """ Class that parses a dataset and trains it using svm """
 
-    def __init__(self, input_csv, classification_name):
+    def __init__(self, input_csv, training_percentage, classification_name):
         self.input = pandas.read_csv(fill_empty_cells(input_csv))
         self.X = self.input.drop(classification_name, axis=1)
         self.y = self.input[classification_name]
         self.X_train, self.X_test, self.y_train, self.y_test = model_selection.train_test_split(
-            self.X, self.y, test_size=0.5)
+            self.X, self.y, test_size=training_percentage)
         self.classifier = None
         print('{0}\nData size: {1}\nFeatures: {2}\n{0}'.format(
             '-' * 30, self.X.shape[0], self.X.shape[1]))
@@ -71,7 +71,7 @@ class Data(object):
 
 
 def analyze_data(args):
-    data = Data(args.input, args.classname)
+    data = Data(args.input, args.train, args.classname)
     data.train()
 
     data.predict()
