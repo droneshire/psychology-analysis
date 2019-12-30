@@ -48,7 +48,7 @@ class Data(object):
             '-' * 30, self.X.shape[0], self.X.shape[1]))
 
     def train(self):
-        self.classifier = svm.SVC(kernel='linear')
+        self.classifier = svm.SVC(kernel='poly', degree=3)
         self.classifier.fit(self.X_train, self.y_train)
 
     def save(self, outfile):
