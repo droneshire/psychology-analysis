@@ -29,7 +29,7 @@ optional arguments:
 3) `pip install -r requirements.txt`
 4) run the program:
 
-`python analyze.py --input /path/to/dataset.csv --output /path/to/save/model.m --t 0.5 --classname Engaged --patch 0.0`
+`python analyze.py --input /path/to/dataset.csv --output /path/to/save/model.m --train 0.25 --classname Engaged --patch 0.0`
 
 ## Example output:
 ```
