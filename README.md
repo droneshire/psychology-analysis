@@ -18,11 +18,11 @@ optional arguments:
   -t TRAIN, --train TRAIN
                         percentage of input file as training data
   -p PATCH, --patch PATCH
-                        patch any empty csv cells with this value
-
+                        patch empty csv cells with this value (doesn't modify
+                        input file)
 ```
 
-To setup and run:
+### To setup and run:
 
 1) clone the repository
 2) start the virtual environment within the cloned repo `virtualenv -p python2.7`
@@ -31,7 +31,7 @@ To setup and run:
 
 `python analyze.py --input /path/to/dataset.csv --output /path/to/save/model.m --t 0.5 --classname Engaged --patch 0.0`
 
-Example output:
+## Example output:
 ```
 WARNING: patching csv with 0.0
 WARNING: patching csv with 0.0
@@ -62,7 +62,7 @@ All        256  45  301
 --------------------------------------------------------------------------------
 ```
 
-Notes:
+# Notes:
 
 * The `--classname` argument is the csv column label that corresponds to the class specification (i.e. the answer/prediction)
 
