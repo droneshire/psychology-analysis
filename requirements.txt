@@ -1,5 +1,17 @@
+cycler==0.10.0
+functools32==3.2.3.post2
 matplotlib==2.0.0
 numpy==1.16.2
 pandas==0.19.2
+pathlib2==2.3.5
+pickleshare==0.7.5
+pyparsing==2.4.6
+python-dateutil==2.8.1
+pytz==2019.3
+scandir==1.10.0
 scikit-learn==0.18.1
 scipy==0.18.1
+six==1.13.0
+subprocess32==3.5.4
+tqdm==4.41.0
+yolk3k==0.9
