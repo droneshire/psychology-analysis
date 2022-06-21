@@ -1,7 +1,7 @@
 cycler==0.10.0
 functools32==3.2.3.post2
 matplotlib==2.0.0
-numpy==1.16.2
+numpy==1.22.0
 pandas==0.19.2
 pathlib2==2.3.5
 pickleshare==0.7.5
